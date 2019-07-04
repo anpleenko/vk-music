@@ -7,7 +7,9 @@
     "development": "rm -rf ./dist && webpack-dev-server --env=loc",
     "build-dev": "rm -rf ./dist && webpack --env=dev --progress",
     "build-prod": "rm -rf ./dist && webpack --env=prod --progress",
-    "lint": "eslint ./src/**/*.js && stylelint ./src/**/*.scss"
+    "lint": "eslint ./src/**/*.js && stylelint ./src/**/*.scss",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "babel-polyfill": "^6.16.0",
@@ -28,7 +30,8 @@
     "redux-localstorage": "^0.4.1",
     "redux-saga": "^0.13.0",
     "redux-thunk": "^2.1.0",
-    "reset-css": "^2.2.0"
+    "reset-css": "^2.2.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.3",
@@ -70,5 +73,6 @@
     "yargs": "^6.4.0"
   },
   "author": "Evgeny Zaytsev <overhawlin@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
